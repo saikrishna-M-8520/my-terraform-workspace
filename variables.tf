@@ -1,8 +1,8 @@
 variable "aws_access_key" {
-  default = "AKIAU7HJKFCITY34QSCK"
+  default = ""
 }
 variable "aws_secret_key" {
-  default = "EBnazngtmcGPXDbAPhoGwUwNdi5lJq85x2E6d5/8"
+  default = ""
 }
 
 variable "networking" {
