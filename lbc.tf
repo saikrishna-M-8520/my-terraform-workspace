@@ -33,8 +33,8 @@ resource "kubernetes_secret" "aws-credentials" {
   }
 
   data = {
-    access-key-id     = var.aws_access_key_id
-    secret-access-key = var.aws_secret_access_key
+    access-key-id     = var.aws_access_key
+    secret-access-key = var.aws_secret_key
   }
 
   type = "Opaque"
@@ -113,12 +113,12 @@ resource "kubernetes_deployment" "loadbalancer-controller" {
             period_seconds        = 10
           }
 
-          ports {
+          port {
             name = "http"
             container_port = 80
           }
 
-          ports {
+          port {
             name = "https"
             container_port = 443
           }
