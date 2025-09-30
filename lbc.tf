@@ -1,6 +1,5 @@
 resource "aws_iam_role" "loadbalancer-controller" {
   name = "loadbalancer-controller"
-  
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -46,6 +45,7 @@ resource "kubernetes_deployment" "loadbalancer-controller" {
     namespace = kubernetes_namespace.loadbalancer-controller.metadata.0.name
   }
 
+  wait_for_rollout = false
   spec {
     selector {
       match_labels = {

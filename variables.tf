@@ -6,6 +6,7 @@ variable "aws_secret_key" {
   default = ""
 }
 
+
 variable "networking" {
   type = object({
     cidr_block      = string
